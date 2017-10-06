@@ -11,14 +11,14 @@ namespace _03.EnglishNameOfLastDigit
     {
         static void Main(string[] args)
         {
-            int number = int.Parse(Console.ReadLine());
+            long number = long.Parse(Console.ReadLine());
 
-            GetLastDigitName(Math.Abs(number));
+            GetLastDigitName(number);
         }
 
-        static void GetLastDigitName(int number)
+        static void GetLastDigitName(long number)
         {
-            int lastDigit = number % 10;
+            long lastDigit =Math.Abs(-number % 10);
 
             string[] digits = new string[]
                 {"zero", "one", "two", "three", "four",

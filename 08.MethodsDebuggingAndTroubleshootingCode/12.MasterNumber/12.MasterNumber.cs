@@ -35,17 +35,17 @@ namespace _12.MasterNumber
                 {
                     continue;
                 }
-                
+
             }
-           
+
         }
 
         static bool isThereEvenDigitInNum(int number)
         {
 
-            while (number != 0 )
+            while (number != 0)
             {
-                
+
                 if ((number % 10) % 2 == 0)
                 {
                     return true;
@@ -73,13 +73,20 @@ namespace _12.MasterNumber
 
         static bool CheckIfNumberIsSymmetric(int number)
         {
-            string original = number.ToString();
-            string reversed = new string(original.Reverse().ToArray());
+            int n = number;
+            int reversedNumber = 0;
+            while (number > 0)
+            {
+                int dig = number % 10;
+                reversedNumber = reversedNumber * 10 + dig;
+                number = number / 10;
+            }
 
-            if (original == reversed)
+            if (n == reversedNumber)
             {
                 return true;
             }
+
             return false;
         }
     }
